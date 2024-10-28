@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulir Pendaftaran</title>
+</head>
+
+<body bgcolor="#cccfff" topmargin="#fff000">
+  <table border="2" width="700" height="700" align="center" bgcolor="white" cellpadding="10">
+    <tr>
+      <td>
+        <form method="post" action="">
+          <h2 align="center">FORMULIR PENDAFTARAN UNIVERSITAS AL-AZHAR INDONESIA</h2>
+          <center><img src="al-azhar.png" widht="35" height="150" align="center">
+            <hr>
+          </center>
+
+
+          <table align="center">
+            <tr>
+              <td>Nama</td>
+              <td><input type="text" name="nama" size="30" placeholder="masukan nama anda" value="" /></td>
+            </tr>
+            <tr>
+              <td>Alamat</td>
+              <td><textarea cols="30" rows="3" name="alamat"></textarea></td>
+            </tr>
+            <tr>
+              <td>Kota</td>
+              <td><select name="kota" >
+                <option>..pilih kota..</option>
+                <option>tangerang</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Kode pos</td>
+              <td><input type="number" name="kodepos" size="5" /></td>
+            </tr>
+            <tr>
+              <td>Tanggal lahir</td>
+              <td><input type="date" name="tgl" /></td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td><input type="email" name="email" size="10" /></td>
+            </tr>
+            <tr>
+              <td>Jurusan</td>
+              <td><select name="jurusan" size="3">
+                  <option>Sains dan teknologi</option>
+                  <option>Ekonomi dan bisnis</option>
+                  <option>Hukum</option>
+                </select></td>
+            </tr>
+            <tr>
+              <td>Jenis kelamin</td>
+              <td><input type="radio" name="jk" value="Laki-Laki" />laki-Laki <input type="radio" name="jk"
+                  value="Perempuan" />Perempuan</td>
+            </tr>
+            <tr>
+              <td>Hobby</td>
+              <td><input type="checkbox" name="hobby" value="membaca" />membaca
+                <input type="checkbox" name="hobby" value="menggambar" />menggambar
+              </td>
+            </tr>
+
+            <tr>
+              <td>upload file</td>
+              <td><input type="file" name="dokumen" /></td>
+            </tr>
+
+            <tr>
+              <td><input type="submit" name="submit" value="kirim" /><input type="reset" name="reset" value="batal" />
+              </td>
+            </tr>
+
+          </table>
+        </form>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

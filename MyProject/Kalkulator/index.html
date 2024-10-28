@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Calculator</title>
+
+    <!-- Math.js CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+      integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- For styling -->
+    <style>
+      table {
+        border: 1px solid  	#2a18c8;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      input[type="button"] {
+        width: 100%;
+        padding: 20px 40px;
+        background-color:  	#1b41cb;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+      }
+
+      input[type="text"] {
+        padding: 20px 30px;
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        border: 2px solid  	#5D6D8E;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Use Table to Create Calculator Structure Design -->
+    <table id="calcu">
+      <tr>
+        <td colspan="3"><input type="text" id="result" /></td>
+        <td><input type="button" value="C" onclick="clr()" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" onclick="dis('1')" /></td>
+        <td><input type="button" value="2" onclick="dis('2')" /></td>
+        <td><input type="button" value="3" onclick="dis('3')" /></td>
+        <td><input type="button" value="/" onclick="dis('/')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="dis('4')" /></td>
+        <td><input type="button" value="5" onclick="dis('5')" /></td>
+        <td><input type="button" value="6" onclick="dis('6')" /></td>
+        <td><input type="button" value="" onclick="dis('')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="7" onclick="dis('7')" /></td>
+        <td><input type="button" value="8" onclick="dis('8')" /></td>
+        <td><input type="button" value="9" onclick="dis('9')" /></td>
+        <td><input type="button" value="-" onclick="dis('-')" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="0" onclick="dis('0')" /></td>
+        <td><input type="button" value="." onclick="dis('.')" /></td>
+        <!-- solve function call function solve to evaluate value -->
+        <td><input type="button" value="=" onclick="solve()" /></td>
+        <td><input type="button" value="+" onclick="dis('+')" /></td>
+      </tr>
+    </table>
+
+    <script>
+      // Function that displays value
+      function dis(val) {
+        document.getElementById("result").value += val;
+      }
+
+      // Function that listens for keyboard inputs
+      document.addEventListener("keydown", function (event) {
+        const allowedKeys = "0123456789+-*/.";
+        if (allowedKeys.includes(event.key)) {
+          dis(event.key);
+        } else if (event.key === "Enter") {
+          solve();
+        } else if (event.key === "Escape") {
+          clr();
+        }
+      });
+
+      // Function that evaluates the expression and returns the result
+      function solve() {
+        let expression = document.getElementById("result").value;
+        try {
+          let result = math.evaluate(expression);
+          document.getElementById("result").value = result;
+        } catch (error) {
+          document.getElementById("result").value = "Error";
+        }
+      }
+
+      // Function that clears the display
+      function clr() {
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>

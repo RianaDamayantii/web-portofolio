@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(216, 218, 236);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(48, 23, 147);
+  text-align: center;
+}
+.nav ul li {
+  display: inline-block;
+  line-height: 45px;
+}
+
+.nav ul li a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.nav ul li a:hover {
+  color: black;
+}
+
+.container {
+  width: 960px;
+  margin: 50px auto;
+  background-color: #fff;
+}
+
+.header {
+  padding: 50px;
+}
+
+.header p {
+  margin-top: 10px;
+}
+
+.hero {
+  height: 400px;
+  background-image: url(img/netflix_169.jpeg);
+  background-size: cover;
+}
+
+h2 {
+  text-align: center;
+}
+hr {
+  width: 300px;
+  border-top: 3px solid lightblue;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.paragraf {
+  padding: 50px;
+}
+
+.paragraf p {
+  margin-bottom: 10px;
+}
+
+.content {
+  padding: 50px;
+  margin-top: -20px;
+}
+
+.kiri {
+  width: 400px;
+  float: left;
+  background-color: #dcd3ff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.kanan {
+  width: 400px;
+  float: left;
+  background-color: #dcd3ff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 300px;
+  height: 180px;
+  margin-left: 28px;
+}
+
+h3 {
+  text-align: center;
+  padding: 20px;
+}
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1;
+}
+
+.footer {
+  background-color: black;
+  padding: 10px;
+}
+
+.footer .copy {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer a {
+  color: lightblue;
+  text-align: none;
+}
